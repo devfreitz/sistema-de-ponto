@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponto Digital - Davi Caller</title>
+
+<link rel="stylesheet" href="styles.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="perfil">
+<img src="davi.png" alt="Foto de Perfil" class="foto-perfil">
+<h1><i class="fa-solid fa-user-clock"></i> Registro de Ponto</h1>
+<h2>Davi Caller</h2>
+</div>
+
+<div id="saudacao" class="saudacao"></div>
+
+<div class="relogio" id="relogio"></div>
+
+<div class="botoes">
+
+<button onclick="registrar('Entrada')" class="entrada">
+<i class="fa-solid fa-door-open"></i>
+<span>Entrada</span>
+</button>
+
+<button onclick="registrar('Inicio Intervalo')" class="intervalo">
+<i class="fa-solid fa-mug-hot"></i>
+<span>Início Intervalo</span>
+</button>
+
+<button onclick="registrar('Fim Intervalo')" class="volta">
+<i class="fa-solid fa-rotate-left"></i>
+<span>Fim Intervalo</span>
+</button>
+
+<button onclick="registrar('Saida')" class="saida">
+<i class="fa-solid fa-right-from-bracket"></i>
+<span>Saída</span>
+</button>
+
+</div>
+
+<a href="https://docs.google.com/spreadsheets/d/1SJibURRK5yW9_auN1gLFuJxh0MStNJlJt-vDfkdlCwk/edit"
+target="_blank"
+class="btn-planilha">
+<i class="fa-solid fa-table"></i>
+Acessar Registro de Ponto
+</a>
+
+</div>
+
+<!-- Notificação -->
+<div id="notificacao" class="notificacao"></div>
+
+<footer class="rodape">
+Desenvolvido por 
+<a href="https://instagram.com/devfreitz" target="_blank">
+<i class="fa-solid fa-code"></i> @devfreitz
+</a>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+function atualizarRelogio(){
+const agora = new Date();
+document.getElementById("relogio").innerHTML =
+agora.toLocaleDateString("pt-BR") + " - " +
+agora.toLocaleTimeString("pt-BR");
+}
+setInterval(atualizarRelogio,1000);
+atualizarRelogio();
+</script>
+
+</body>
+</html>

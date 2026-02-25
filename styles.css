@@ -1,0 +1,190 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+overflow:hidden;
+
+/* 🔥 GRADIENTE ANIMADO */
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1e3c72);
+background-size:400% 400%;
+animation:gradiente 12s ease infinite;
+}
+
+@keyframes gradiente{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+background:rgba(30,42,56,0.95);
+padding:40px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+text-align:center;
+width:100%;
+max-width:500px;
+backdrop-filter:blur(10px);
+}
+
+/* FOTO PERFIL */
+.perfil{
+margin-bottom:15px;
+}
+
+.foto-perfil{
+width:110px;
+height:110px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #00e5ff;
+box-shadow:0 0 20px #00e5ff;
+animation:brilho 2s infinite alternate;
+}
+
+@keyframes brilho{
+from{box-shadow:0 0 15px #00e5ff;}
+to{box-shadow:0 0 30px #00e5ff;}
+}
+
+h1{
+font-size:24px;
+margin-top:10px;
+}
+
+h2{
+font-size:18px;
+color:#00e5ff;
+margin-bottom:15px;
+}
+
+.saudacao{
+margin-bottom:10px;
+font-size:14px;
+opacity:0.9;
+}
+
+.relogio{
+font-size:14px;
+margin-bottom:25px;
+opacity:0.7;
+}
+
+.botoes{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+button{
+padding:15px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+font-size:15px;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+color:white;
+}
+
+button:hover{
+transform:translateY(-3px);
+}
+
+.entrada{background:#00c853;}
+.intervalo{background:#ffab00;}
+.volta{background:#2979ff;}
+.saida{background:#d50000;}
+
+button:disabled{
+opacity:0.5;
+cursor:not-allowed;
+transform:none;
+}
+
+/* BOTÃO PLANILHA */
+.btn-planilha{
+display:inline-block;
+margin-top:25px;
+padding:12px 20px;
+background:#00e5ff;
+color:#000;
+border-radius:12px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn-planilha:hover{
+background:#00bcd4;
+transform:scale(1.05);
+}
+
+/* 🔔 NOTIFICAÇÃO TOPO */
+.notificacao{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%) translateY(-100px);
+background:#111;
+color:white;
+padding:15px 25px;
+border-radius:12px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+transition:0.4s;
+z-index:9999;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.notificacao.mostrar{
+transform:translateX(-50%) translateY(0);
+}
+
+/* RODAPÉ */
+.rodape{
+position:fixed;
+bottom:15px;
+font-size:13px;
+opacity:0.8;
+}
+
+.rodape a{
+color:#00e5ff;
+text-decoration:none;
+font-weight:bold;
+}
+
+.rodape a:hover{
+text-decoration:underline;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.container{
+padding:25px;
+}
+button{
+font-size:14px;
+}
+.foto-perfil{
+width:90px;
+height:90px;
+}
+}
